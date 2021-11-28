@@ -57,7 +57,7 @@ main
   flex-direction: column
   align-items: center
   overflow: auto
-  padding-bottom: 20px
+  padding-bottom: 40px
 
 .app-column-servers-body > .app-avatar
   margin-top: $distance-between-icon
@@ -171,8 +171,11 @@ main
   height: 40px
   min-width: 40px
   min-height: 40px
-.app-avatar:hover
-  box-shadow: 2px 2px  #c2c2c2
+.app-avatar:not(.app-avatar-user-info,.app-avatar-message):hover
+  // box-shadow: 2px 2px  #c2c2c2
+  color: rgba(255, 255, 255, 1)
+  box-shadow: 0 10px 20px #cccbd69f
+
 .app-avatar:not(.app-active-disabled):active, .app-avatar-active
   border-radius: 10px
   outline: black auto 0.5px
@@ -207,7 +210,7 @@ main
 // .app-user > .app-avatar
 //   pointer-events: none
 
-.app-user:hover
+.app-user:not(.app-user.app-user-footer):hover
   box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1)
   border-radius: $default-border-radis
 .app-user:active
