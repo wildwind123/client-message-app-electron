@@ -40,7 +40,7 @@ function createWindow () {
     mainWindow.webContents.send("fromMain", args);
   });
 
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 }
 
 // In this file you can include the rest of your app's specific main process
