@@ -143,7 +143,7 @@ class Server {
 
 class Faker {
     #Users = [
-        new User(0, false, "Bob", "Dota 2", "icon1.jpg"),
+        new User(0, true, "Bob", "Dota 2", "icon1.jpg"),
         new User(1, false, "Roman", "Cs 1.6", "icon2.jpg"),
         new User(2, false, "Enternal Envy", "Dota 2", "icon3.jpg"),
         new User(3, true, "Lisa", "Lol", "icon4.jpeg"),
