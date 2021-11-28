@@ -18,5 +18,22 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^16.0.1"
+  },
+  "build": {
+    "files": [
+      "style/css/*",
+      "index.html",
+      "bootstrap/**/**/*",
+      "main.js",
+      "preload.js",
+      "renderer.js"
+    ],
+    "linux": {
+      "target": "AppImage"
+    },
+    "win": {
+      "target": "portable"
+    },
+    "asar": false
   }
 }
