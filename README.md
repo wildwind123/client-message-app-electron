@@ -1,3 +1,3 @@
 # client-message-app-electron
-npm install
+npm install <br>
 npm start
