@@ -192,7 +192,7 @@ class Faker {
 
     #Servers = [
         new Server(0, "Dota2", [0, 1], 'server1.jpg'),
-        new Server(1, "Lol", [2], 'server2.jpg'),
+        new Server(1, "LoL", [2], 'server2.jpg'),
     ]
 
     /**
@@ -648,6 +648,7 @@ let renderServerImages = () => {
         let template = document.querySelector('.app-avatar.hide')
         let newServerIconElement = template.cloneNode(true)
         newServerIconElement.classList.remove('hide')
+        newServerIconElement.setAttribute('title', server.name)
         newServerIconElement.style.backgroundImage = "url('style/css/" + server.icon + "')"
         newServerIconElement.id = 'app-avatar-' + server.id
         newServerIconElement.addEventListener('click', function (event) {
