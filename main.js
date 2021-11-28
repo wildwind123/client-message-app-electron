@@ -1,8 +1,12 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, ipcMain} = require('electron')
+const {
+  app,
+  BrowserWindow,
+  ipcMain
+} = require('electron')
 const path = require('path')
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -13,11 +17,11 @@ function createWindow () {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     },
-    
-  })
-  
 
- 
+  })
+
+
+
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
@@ -27,14 +31,14 @@ function createWindow () {
 
     // For toolbar buttons.
     if (args === "maximize") {
-      if ( mainWindow.isMaximized() ) {
+      if (mainWindow.isMaximized()) {
         mainWindow.unmaximize();
       } else {
         mainWindow.maximize();
       }
-    } else if (args === "minimize" ) {
+    } else if (args === "minimize") {
       mainWindow.minimize();
-    } else if ( args === "close" ) {
+    } else if (args === "close") {
       mainWindow.close();
     }
     mainWindow.webContents.send("fromMain", args);
@@ -45,8 +49,8 @@ function createWindow () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-ipcMain.on('synchronous-message', function(event, arg) {
-  console.log(arg);  // prints "ping"
+ipcMain.on('synchronous-message', function (event, arg) {
+  console.log(arg); // prints "ping"
   event.returnValue = 'pong';
   console.log('return value was set');
 });
@@ -71,4 +75,3 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
-
