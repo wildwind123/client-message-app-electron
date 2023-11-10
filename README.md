@@ -1,4 +1,4 @@
-# client-message-app-electron
+# client-message-app-electron. test.
 Test app "message client". Written on the electron
 
 # run
